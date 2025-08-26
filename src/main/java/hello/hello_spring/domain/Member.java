@@ -1,8 +1,15 @@
 package hello.hello_spring.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Member {
 
-    //시스템이 저장하는 아이디
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // DB에서 auto_increment
     private Long id;
 
     private String name;
